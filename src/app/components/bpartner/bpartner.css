@@ -1,0 +1,273 @@
+.bpartner-container {
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.section1 {
+  text-align: center;
+  padding: 120px 0%;
+  background-color: #f8f9fbbd;
+  width: 100%;
+}
+
+.section1 .title {
+  color: #0A2E6D;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.section1 .subtitle {
+  color: #4A90E2;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.section1 .description {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.section2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 80px 10%;
+  background-color: #e9f1fbaf;
+  border-radius: 0;
+}
+
+.section2 .bpartner-text {
+  flex: 1;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+.section2 .highlight {
+  color: #4A90E2;
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.section2 .bpartner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.section2 img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.section2 img:hover {
+  transform: scale(1.05);
+}
+
+.section3 {
+  background-color: #f8f9fbbd;
+  text-align: center;
+  padding: 100px 8%;
+  width: 100%;
+}
+
+.section3 .subtitle {
+  color: #4A90E2;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.section3 .subtext {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 60px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
+}
+
+.benefit-item img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item img:hover {
+  transform: scale(1.1);
+}
+
+.benefit-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.clientes-section {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.clientes-header {
+    position: relative;
+    left: 0%;
+    right: 0%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background-color: #005488; 
+    color: #ffffff;
+    width: 100vw;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.clientes-section .title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.clientes-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  flex-wrap: wrap;
+  padding: 30px 20px;
+}
+
+.clientes-logos img {
+  max-width: 200px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.clientes-logos img:hover {
+  transform: scale(1.5);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.nosotros-section:nth-child(1) .nosotros-image img {
+  animation: pulse 9s infinite;
+}
+
+.nosotros-section:nth-child(2) .nosotros-image img {
+  animation: pulse 9s infinite 3s;
+}
+
+.nosotros-section:nth-child(3) .nosotros-image img {
+  animation: pulse 9s infinite 6s;
+}
+
+@media (max-width: 992px) {
+  .section2 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section2 .bpartner-image img {
+    max-width: 300px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-item {
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .benefit-item img {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section1 {
+    width: 350px;
+  }
+
+  .section1 .description {
+    font-size: 1.05rem;
+  }
+  .section1 .title {
+    font-size: 2.2rem;
+  }
+
+  .section1 .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .section2 img {
+    max-width: 250px;
+  }
+
+  .section3 .subtitle {
+    font-size: 1.6rem;
+  }
+
+  .section3 .subtext {
+    font-size: 1rem;
+  }
+
+  .clientes-section .title {
+    font-size: 1.2rem;
+  }
+
+  .clientes-logos img {
+    max-width: 160px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  .clientes-logos img:hover {
+    transform: scale(1.5);
+  }
+}

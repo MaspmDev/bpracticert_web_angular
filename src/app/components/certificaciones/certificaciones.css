@@ -1,0 +1,130 @@
+app-carrucel {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.certificaciones-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 25vh;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #0A2E6D;
+  overflow-x: hidden;
+}
+
+.certificaciones-header {
+  max-width: 1000px;
+  text-align: left;
+  margin: 60px;
+}
+
+.certificaciones-contenido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.texto-certificaciones {
+  flex: 1;
+  min-width: 300px;
+}
+
+.titulo-certificaciones {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.titulo-certificaciones .azul-claro {
+  color: #5AA2E7;
+}
+
+.titulo-certificaciones .azul-fuerte {
+  color: #0A2E6D;
+}
+
+.descripcion-certificaciones {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.imagen-certificaciones {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-certificaciones img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-left {
+  animation: fadeInLeft 1s ease-out both;
+}
+
+.animate-right {
+  animation: fadeInRight 1s ease-out both;
+}
+
+@media (max-width: 768px) {
+  .certificaciones-container {
+    padding: 60px 15px;
+  }
+
+  .certificaciones-contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .titulo-certificaciones {
+    font-size: 2rem;
+  }
+
+  .descripcion-certificaciones {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .imagen-certificaciones img {
+    width: 600px;
+    margin-top: 20px;
+  }
+
+  .animate-left,
+  .animate-right {
+    animation-duration: 0.9s;
+    transform: none;
+  }
+}

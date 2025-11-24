@@ -1,0 +1,30 @@
+<div class="carrusel-container">
+  <h2 class="carrusel-title">NUESTRAS CERTIFICACIONES</h2>
+  <p class="carrusel-subtitle">
+    Da click en las insignias para obtener más información acerca de ellas:
+  </p>
+
+  <div class="carrusel-wrapper">
+    <button class="carrusel-btn left" (click)="prevSlide()">&#10094;</button>
+
+    <div class="carrusel">
+      <div
+        class="carrusel-inner"
+        [style.transform]="getTransform()"
+        [class.transition]="transitionActive"
+      >
+        <div
+          class="cert-card"
+          *ngFor="let cert of displayCerts"
+        >
+          <img [src]="cert.imagen" [alt]="cert.nombre" class="cert-img" />
+          <h3>{{ cert.nombre }}</h3>
+          <p class="precio">${{ cert.costo }} USD</p>
+          <button class="ver-mas" (click)="verDetalle(cert.id)">Ver más</button>
+        </div>
+      </div>
+
+      <button class="carrusel-btn right" (click)="nextSlide()">&#10095;</button>
+    </div>
+  </div>
+</div>

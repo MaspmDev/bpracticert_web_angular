@@ -1,0 +1,10 @@
+.home-container {
+  position: relative;
+  color: #0A2E6D;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 80px;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}

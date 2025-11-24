@@ -1,0 +1,63 @@
+<div class="detalle-container" *ngIf="certificacion">
+  <div class="detalle-header">
+    <img [src]="certificacion.imagen" [alt]="certificacion.nombre" class="detalle-img" />
+    <div class="detalle-info">
+      <h1>{{ certificacion.nombre }}</h1>
+      <p>{{ certificacion.descripcion }}</p>
+    </div>
+  </div>
+
+  <section class="acerca">
+    <h2>Acerca de la Certificación</h2>
+    <h3>Conoce cómo puedes obtener tu certificación como {{ certificacion.nombre }}</h3>
+
+    <div class="grid-info">
+      <div class="grid-item">
+        <div class="half-image">
+          <img src="assets/images/Contenido-C/CONTENIDO.PNG" alt="Contenido del Examen">
+        </div>
+        <div class="text">
+          <h4>Contenido del Examen</h4>
+           <ul>
+                <li *ngFor="let item of certificacion.contenido">{{ item }}</li>
+            </ul>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="half-image">
+          <img src="assets/images/Contenido-C/DURACION.PNG" alt="Acerca del Examen">
+        </div>
+        <div class="text">
+          <h4>Acerca del Examen</h4>
+          <p> Preguntas: {{ certificacion.preguntas }}</p>
+          <p> Duración: {{ certificacion.duracion }} minutos</p>
+          <p> Oportunidades: {{ certificacion.oportunidades }}</p>
+          <p> Aprobación: {{ certificacion.aprobacion }}%</p>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="half-image">
+          <img src="assets/images/Contenido-C/REQUISITOS.PNG" alt="Requisitos">
+        </div>
+        <div class="text">
+          <h4>Requisitos</h4>
+          <p>{{ certificacion.requisitos }}</p>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div class="half-image">
+          <img src="assets/images/Contenido-C/VALOR.PNG" alt="Beneficios">
+        </div>
+        <div class="text">
+          <h4>Beneficios</h4>
+          <p>{{ certificacion.beneficios }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+</div>
+<app-carrucel></app-carrucel>
