@@ -28,14 +28,12 @@ app-carrucel {
 
 .carrusel-wrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
   width: 95%;
   max-width: 1000px;
-  overflow: visible;
+  margin: 0 auto;
+  overflow: hidden;
 }
+
 
 .carrusel {
   width: 100%;
@@ -46,7 +44,7 @@ app-carrucel {
 .carrusel-inner {
   display: flex;
   transition: transform 0.6s ease;
-  width: 100%;
+  gap: 16px;
   /*Si se le agrega overflow: hidden ya no se ve el carrusel ni en web*/
 }
 
@@ -56,13 +54,11 @@ app-carrucel {
 
 .cert-card {
   flex: 0 0 calc(100% / 3);
-  box-sizing: border-box;
-  padding: 10px;
+  padding: 14px;
   text-align: center;
   background: white;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  margin: 0 8px;
   transition: transform 0.8s ease, box-shadow 0.6s ease;
 }
 
@@ -145,15 +141,15 @@ app-carrucel {
   }
 
   .carrusel-inner {
-    display: flex;
-    justify-content: center;
+    gap: 0;
+  }
+
+  .carrusel-wrapper {
     width: 100%;
   }
 
   .cert-card {
     flex: 0 0 100%;
-    margin: 0;
-    padding: 10px;
   }
 
   .carrusel-btn.left {
@@ -169,7 +165,6 @@ app-carrucel {
 
   .carrusel-inner {
     display: flex;
-    justify-content: center;
     width: 100%;
   }
   
@@ -193,8 +188,6 @@ app-carrucel {
 
   .carrusel-inner {
     display: flex;
-    justify-content: center;
-    width: 100%;
   }
 
   .cert-card {
