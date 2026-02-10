@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Carrucel } from '../carrucel/carrucel';
-
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-certificacion-detalle',
@@ -313,7 +313,7 @@ export class CertificacionDetalle {
     { id: 'pmop', 
       nombre: 'PROFESSIONAL MANAGEMENT OFFICE PRACTITIONER', 
       imagen: 'assets/images/Carrucel/PMOP.PNG', 
-      descripcion: 'Esta certificación valida los conocimientos de buenas prácticas requeridos para los integrantes de una Oficina de Gestión de Proyectos.    ',
+      descripcion: 'Esta certificación valida los conocimientos de buenas prácticas requeridos para los integrantes de una Oficina de Gestión de Proyectos.',
       contenido: [
         'Conceptos Generales y Marco de Referencia',
         '¿Qué es una PMO?',
@@ -330,6 +330,32 @@ export class CertificacionDetalle {
       ],
       beneficios: [
         'Reconocimiento profesional avanzado',
+      ]
+    },
+    { id: 'spp', 
+      nombre: 'SCHEDULE & PROJECT PRACTITIONER', 
+      imagen: 'assets/images/Carrucel/SPP.png',
+      descripcion: 'La certificación Schedule & Project Practitioner acredita que la persona titular tiene el conocimiento fundamental para planificar, desarrollar y dar seguimiento a cronogramas de proyectos conforme a buenas prácticas de Dirección de Proyectos. La persona certificada demuestra comprensión de técnicas y herramientas utilizadas para la secuenciación de actividades, estimación de duraciones, análisis de dependencias y monitoreo del desempeño del cronograma. Asimismo, cuenta con conocimiento funcional del uso de Microsoft Project como herramienta de apoyo para la planificación y control de cronogramas en proyectos.',
+      contenido: [
+        'Fundamentos de Gestión de Cronogramas',
+        'Planificar la Gestión de Cronogramas',
+        'Desarrollar Cronogramas',
+        'Identificar Rutas Críticas',
+        'Técnicas de Estimación',
+        'Técnicas para identificar actividades',
+        'Técnicas para establecer la secuencia y programación de actividades',
+        'Controlar y monitorear Cronogramas',
+        'Establecer la Línea Base del Cronograma',
+      ],
+      preguntas: 30,
+      duracion: 45,
+      oportunidades: 2,
+      aprobacion: 80,
+      requisitos: [
+        'No hay requisitos previos para esta certificación.'
+      ],
+      beneficios: [
+        'Esta certificación respalda que el profesional comprende los principios clave de la gestión de cronogramas y puede contribuir en la planificación y seguimiento de proyectos en distintos entornos organizacionales.',
       ]
     },
     { id: 'pmf', 
@@ -359,12 +385,19 @@ export class CertificacionDetalle {
 
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.certId = params.get('id')!;
       this.certificacion = this.certificaciones.find(c => c.id === this.certId);
+
+      setTimeout(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }, 0);
     });
   }
   

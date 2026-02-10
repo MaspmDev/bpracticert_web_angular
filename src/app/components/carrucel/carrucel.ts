@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './carrucel.css',
 })
 export class Carrucel {
+  @ViewChild('track') track!: ElementRef;
   currentIndex = 0;
   displayCerts: any[] = [];
   visibleCount = 3;
@@ -24,6 +25,7 @@ export class Carrucel {
     { id: 'prmp', nombre: 'PROJECT RISK MANAGER PROFESSIONAL', costo: 150, imagen: 'assets/images/Carrucel/PRMP.PNG' },
     { id: 'bcdp', nombre: 'BUSINESS CASE DEVELOPMENT PROFESSIONAL', costo: 125, imagen: 'assets/images/Carrucel/BCDP.PNG' },
     { id: 'stmp', nombre: 'SCRUM TEAM MEMBER PRACTITIONER', costo: 125, imagen: 'assets/images/Carrucel/STMP.png' },
+    { id: 'spp', nombre: 'SCHEDULE & PROJECT PRACTITIONER ', costo: 75, imagen: 'assets/images/Carrucel/SPP.png' },
     { id: 'bap', nombre: 'BUSINESS ANALYSIS PRACTITIONER', costo: 195, imagen: 'assets/images/Carrucel/BAP.PNG' },
     { id: 'cpat', nombre: 'COACHING PRACTICES FOR AGILE TEAMS', costo: 175, imagen: 'assets/images/Carrucel/CPAT.PNG' },
     { id: 'dtp', nombre: 'DESIGN THINKING PRACTITIONER', costo: 150, imagen: 'assets/images/Carrucel/DTP.PNG' },
@@ -39,11 +41,16 @@ export class Carrucel {
   ngOnInit() {
     this.updateVisibleCount();
     this.displayCerts = [...this.certificaciones, ...this.certificaciones, ...this.certificaciones];
-    this.startAutoplay();
   }
 
   ngOnDestroy() {
     this.stopAutoplay();
+  }
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.startAutoplay();
+    });
   }
 
   @HostListener('window:resize')
@@ -53,12 +60,21 @@ export class Carrucel {
     else if (w < 1024) this.visibleCount = 2;
     else this.visibleCount = 3;
 
-    this.currentIndex = 0;
+    requestAnimationFrame(() => {
+      this.currentIndex = 0;
+    });
   }
 
   getTransform(): string {
-    const translatePct = this.currentIndex * (100 / this.visibleCount);
-    return `translateX(-${translatePct}%)`;
+    if (!this.track) return 'translateX(0px)';
+
+    const firstSlide = this.track.nativeElement.children[0];
+    if (!firstSlide) return 'translateX(0px)';
+
+    const slideWidth = firstSlide.getBoundingClientRect().width;
+    const translateX = this.currentIndex * slideWidth;
+
+    return `translateX(-${translateX}px)`;
   }
 
   nextSlide() {
