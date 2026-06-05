@@ -33,6 +33,7 @@ export class Carrucel {
     { id: 'atp', nombre: 'AGILE THINKING PRACTITIONER', costo: 150, imagen: 'assets/images/Carrucel/ATP.PNG' },
     { id: 'pmop', nombre: 'PROFESSIONAL MANAGEMENT OFFICE PRACTITIONER', costo: 75, imagen: 'assets/images/Carrucel/PMOP.PNG' },
     { id: 'pmf', nombre: 'PROJECT MANAGEMENT FUNDAMENTALS', costo: 75, imagen: 'assets/images/Carrucel/PMF.PNG' },
+    { id: 'aif', nombre: 'ARTIFICIAL INTELLIGENCE FUNDAMENTALS', costo: 75, imagen: 'assets/images/Carrucel/AIF.png' },
     { id: 'apm', nombre: 'ADVANCED PROJECT MANAGER', costo: 290, imagen: 'assets/images/Carrucel/APM.png' },
   ];
 

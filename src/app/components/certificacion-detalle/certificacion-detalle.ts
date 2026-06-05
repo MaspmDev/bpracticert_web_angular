@@ -382,6 +382,33 @@ export class CertificacionDetalle {
         'Reconocimiento profesional avanzado',
       ]
     },
+    { id: 'aif', 
+      nombre: 'ARTIFICIAL INTELLIGENCE FUNDAMENTALS', 
+      imagen: 'assets/images/Carrucel/AIF.png',
+      descripcion: 'Identificar casos de uso de IA, distinguir entre automatización tradicional e inteligencia artificial, formular mejores instrucciones a modelos generativos, reconocer riesgos básicos y participar con mayor criterio en iniciativas de adopción de IA empresarial.',
+      contenido: [
+        'Qué es la inteligencia artificial y por qué importa ahora',
+        'Tipos de IA y principales categorías de uso',
+        'Qué son los LLM y cómo funcionan a nivel conceptual',
+        'Prompts, instrucciones y técnica de shots',
+        'Grounding, datos y reducción de alucinaciones', 
+        'Aplicaciones de IA por área de negocio',
+        'Seguridad, privacidad y gobierno de IA',
+        'Costos, consumo y retorno de inversión',
+        'Hacking, abuso y principales riesgos emergentes',
+        'Futuro de la IA y próximos pasos para las organizaciones'
+      ],
+      preguntas: 35,
+      duracion: 60,
+      oportunidades: 2,
+      aprobacion: 70,
+      requisitos: [
+        'Comprender los fundamentos de la inteligencia artificial, sus aplicaciones principales, sus riesgos y los criterios básicos'
+      ],
+      beneficios: [
+        'Reconocer riesgos de seguridad, privacidad, hacking, fuga de datos y consumo no controlado, evaluar criterios básicos de costo, valor, retorno y viabilidad en proyectos de IA, visualizar tendencias futuras como agentes de IA, automatización inteligente y modelos multimodales.',
+      ]
+    },
 
   ];
 
